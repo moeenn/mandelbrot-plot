@@ -1,7 +1,7 @@
 PROJECT = sandbox
 
 CC = cc
-SRC = src/main.c
+SRC = src/main.c src/image.c src/mandelbrot.c
 OBJ = ${SRC:.c=.o}
 LIBS = -lm
 CFLAGS = -std=c99 -pedantic -Wall -Wno-deprecated-declarations 
