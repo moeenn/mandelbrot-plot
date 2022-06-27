@@ -1,10 +1,11 @@
 #include "image.h"
+#include <stdint.h>
 
 /**
  *  clear the canvas, i.e. convert all pixels to white
  *
  */
-void clear_image(int height, int width, unsigned char pixels[]) {
+void clear_image(int height, int width, uint8_t pixels[]) {
   int p;
   for (p = 0; p < height * width; ++p)
     pixels[p] = 255;
@@ -14,9 +15,9 @@ void clear_image(int height, int width, unsigned char pixels[]) {
  *  write the pixels data to the image file (ppm)
  *
  */
-int write_image(int height, int width, unsigned char pixels[], char *path) {
+int write_image(int height, int width, uint8_t pixels[], char *path) {
   int p;
-  unsigned char c;
+  uint8_t c;
   FILE *fptr;
 
   fptr = fopen(path, "w");
@@ -41,8 +42,8 @@ int write_image(int height, int width, unsigned char pixels[], char *path) {
  *  write single color, at (x, y) to the pixels array
  *
  */
-int write_pixel(int height, int width, int x, int y, unsigned char pixels[],
-                unsigned char color) {
+int write_pixel(int height, int width, int x, int y, uint8_t pixels[],
+                uint8_t color) {
   int index;
   if (y > height || x > width) {
     fprintf(stderr, "Write pixel out of range: (%d, %d)\n", x, y);

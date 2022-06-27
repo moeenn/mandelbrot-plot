@@ -1,7 +1,9 @@
 #include "mandelbrot.h"
+#include <stdint.h>
 
-int mandelbrot(int height, int width, unsigned char pixels[], int max_iter) {
-  int x, y, i;
+int mandelbrot(int height, int width, uint8_t pixels[], uint8_t max_iter) {
+  int x, y;
+  uint8_t i;
   double re, im;
   double complex z, c;
 
