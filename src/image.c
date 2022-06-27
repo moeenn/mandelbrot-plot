@@ -21,7 +21,7 @@ int write_image(int height, int width, unsigned char pixels[], char *path) {
 
   fptr = fopen(path, "w");
   if (fptr == NULL) {
-    printf("Failed to open output file\n");
+    fprintf(stderr, "Failed to open output file\n");
     return 1;
   }
 
